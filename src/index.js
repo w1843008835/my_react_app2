@@ -1,18 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import TodoList from './TodoList';
-import './style.css'
-import Count from'./Count.js'
-import CommentList from './CommentList.js'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import TodoList from "./TodoList";
+import "./style.css";
+import Count from "./Count.js";
+import CommentList from "./CommentList.js";
+import ReduxCounter from "./ReduxCounter.js";
+import store from "./store";
+import { Provider } from "react-redux";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-
-   <CommentList/ >
+    <Provider store={store}>
+      <ReduxCounter />
+    </Provider>
   </React.StrictMode>
 );
 
